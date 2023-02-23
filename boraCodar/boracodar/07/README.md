@@ -1,7 +1,7 @@
 <h1 align="center"> Site para encontrar seu bloco no carnaval </h1>
 
 <p align="center">
-#boraCodar são desafios semanais, promovido pela Rocketseat para ensino de tecnologias WEB. <br/>
+#boraCodar são desafios semanais da Rocketseat para ensino de tecnologias WEB. <br/>
 </p>
 
 <p align="center">
@@ -44,8 +44,8 @@ Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figm
 
 ## :memo: Licença
 
-Esse projeto está sob a licença MIT.
+Esse projeto utiliza a licença MIT.
 
 ---
 
-Feito com ♥ by Rocketseat :wave:
+Corrigido pela Rocketseat ♥ 
