@@ -31,6 +31,10 @@ body {
     display: grid; /* faz com que todas as caixas se comportem como block */ 
 }
 
+.text-center {
+    text-align: center;
+}
+
 
 /* Display Grid faz com que todas as caixas se comportem como block */ 
 
@@ -42,12 +46,12 @@ body {
     column-gap: 3.2rem;
     row-gap: 5.9rem;
 
-    width: fit-content;
-    height: fit-content;
-    min-height: 100vh;
-    min-width: 100vw;
+    width: fit-content; /* largura ideal */ 
+    height: fit-content; /* altura ideal */ 
+    min-height: 100vh; /* altura mínima */ 
+    min-width: 100vw; /* largura mínima */ 
 
-    place-content: center;
+    place-content: center; /* sempre centralizado */ 
 
     /*grid-template-columns: max-content max-content max-content;  3 colunas com tamanho maximo do conteudo*/
 }
@@ -59,14 +63,31 @@ body {
 .top {
     font-weight: 600;
     font-size: 24px;
-    text-align: center;
+}
+
+.middle {
+    display: grid;
+    place-content: center;
+    position: relative;
+}
+
+.middle .content {
+    position: absolute; /* absoluto em relação ao .middle */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; 
+}
+
+.content h3 {
+    font-size: 3.4rem;
 }
 
 .bottom {
     display: flex;
     gap: 2rem;
     justify-content: center;
-    margin-top: auto;
+    margin-top: auto; /* elem.filho dentro de caixa grid*/ 
     font-weight: 500;
     font-size: 14px;
 }
@@ -116,3 +137,133 @@ body {
     font-size: 14px;
     grid-auto-flow: column; */ 
 }
+
+
+svg {
+    --percentage: 0; 
+    width: 19.7rem;
+    height: 19.7rem;
+    transform: rotate(-90deg);
+}
+
+svg circle {
+    stroke-dasharray: 618;
+    stroke-dashoffset: 618; /* some */ 
+    stroke-width: 35;
+    fill: none;
+}
+
+svg circle:nth-child(1) {
+    stroke-dashoffset: 0; /* aparece */ 
+}
+
+svg circle:nth-child(2) {
+    stroke-dashoffset: calc(618 - (618 * var(--percentage))/100);
+    stroke-linecap: round;
+
+    animation: progress 1s ease-in-out forwards; /* animação */ 
+}
+
+/* animação */ 
+@keyframes progress {
+    0% {
+        stroke-dasharray: 618;
+        stroke-dashoffset: 618;
+    }
+}
+
+.weekly-sell {
+    gap: 3.2rem;
+}
+
+.weekly-sell .wrapper {
+    display: flex;
+    gap: 3.2rem;
+}
+
+.weekly-sell .left {
+    gap: 3.2rem;
+}
+
+.weekly-sell .left, 
+.weekly-sell .right {
+    flex: 1; /* tudo na mesma linha */ 
+}
+
+.left .grid {
+    gap: .8rem;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.left .grid span {
+    font-size: 14px;
+    align-items: cenrte;
+    display: flex;
+    gap: .4rem;
+}
+
+.left .grid span::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    display: block;
+    clip-path: polygon(50% 0%, 0% 80%, 100% 80%);
+}
+
+.left .most-sell span::before {
+    background: linear-gradient(180deg, #81FBB8 0%, #28C76F 100%);
+    margin-top: .4rem;
+} 
+
+.left .less-sell span::before {
+    background: linear-gradient(180deg, #EA5455 0%, #FEB692 100%);
+    transform: matrix(1, 0, 0, -1, 0, 0); /* inverte o elemento */ 
+    margin-top: .6rem;
+} 
+
+.bars {
+    display: flex;
+    gap: 5.9rem;
+    align-items: flex-end; /* começar embaixo as barras */
+    position: relative;
+}
+
+.bars::before {
+    content: "";
+    display: block;
+    height: 0.3rem;
+    width: 100%;
+    background: #4a4556;
+    border-radius: 99.9rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.bar-wrapper {
+    display: grid;
+    grid-template-rows: 15.9rem 1.6rem;
+    justify-items: center;
+    gap: 0.5rem;
+    z-index: 1;
+}
+
+.bar {
+    width: 1.5rem;
+    background: linear-gradient(180deg, #90F7EC 0%, #32CCBC 100%);
+    border-radius: 999px;
+
+    height: var(--height);
+    align-self: end;
+
+    animation: up 1.4s;
+}
+
+@keyframes up {
+    0% {
+      height: 0;
+    }
+  }
+
