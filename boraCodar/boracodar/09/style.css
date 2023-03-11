@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* width + padding = tamanho da caixa */ 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root { /* sudo-seletor */ 
+    --text-color: #0F172A; 
+    font-size: 62.5%; /* = 1.0rem */ 
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    font-size: 1.6rem; /* = 1.6rem */
+    background: #f8fafc;
+
+    height: 100vh; /* toda a altura visível */ 
+    display: grid;
+    place-content: center;
+    color: var(--text-color);
+}
+
+main {
+    width: 80rem;
+    height: 69.2rem;
+    padding: 6.4rem 8rem;
+    background: #FFFFFF;
+    box-shadow: 0rem 0.4rem 3.2rem rgba(15, 23, 42, 0.15);
+    border-radius: 1.6rem;
+
+    display: grid;
+    gap: 6.4rem;
+}
+
+section h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+}
+
+.conversor .wrapper {
+    margin-top: 1.6rem;
+    display: flex; /* item lado a lado */ 
+    gap: 1.6rem;
+}
+
+.money-wrapper {
+    background-color: white;
+    outline: .1rem solid #94a3b8; /*deixa a caixa estática*/
+
+    width: 27rem;
+    padding: 1.6rem;
+    border-radius: .8rem; /*não funciona em mobile*/ 
+}
+
+.money-wrapper:hover {
+    outline: 0.25rem solid #7C3AED;
+}
+
+.amount {
+    border: 0;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+
+    color: var(--text-color);
+    width: 50%;
+}
+
+.amount:focus {
+    outline: 0;
+}
+
+.cambio .wrapper { /* dentro da classe cambio e wrapper */ 
+    margin-top: 2.4rem;
+    width: 59.2rem;
+    height: 35.6rem;
+
+    border: 1px solid red;
+}
