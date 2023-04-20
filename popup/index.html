@@ -22,10 +22,12 @@
 
 </dialog>
 
+</body>
+
 <script>
     const button = document.querySelector("button")
 const modal = document.querySelector("dialog")
-const buttonClose = document.querySelector("button")
+const buttonClose = document.querySelector("dialog button")
 
 button.onClick = function () {
     modal.showModal()
@@ -34,9 +36,7 @@ button.onClick = function () {
 buttonClose.onClick = function () {
     modal.close()
 }
-</script>
-
-</body>
+</script> 
 </html>
 
 
