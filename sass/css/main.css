@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* Compilando Arquivo Sass / importando */ /* Código */
+/* global */
+/* Agrupamento de CSS com MIXIN */
+/* pode reutilizar aonde quiser */
+body {
+  background-color: #7159c1;
+  color: orange;
+}
+
+/* Encadeamento e Escopo com SASS */
+.container { /* a cor do container é branca mas a dos paragráfos serão azuis */
+  box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.6);
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  /* $text-color2: white; - essa variavel só existe dentro desse escopo container (ela não é global), então ela nao vai funcionar em outros seletores */
+}
+.container p {
+  box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.6);
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  color: blue;
+  /* booleano */
+  font-weight: bold;
+  /* true / false */
+  color: yellow;
+}
+
+/* Código */
+body {
+  background-color: #7159c1;
+  color: orange;
+}/*# sourceMappingURL=main.css.map */
